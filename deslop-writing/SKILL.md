@@ -1,5 +1,5 @@
 ---
-name: ai-writing-clean
+name: deslop-writing
 description: "Use this skill whenever writing or editing prose that should not read as AI-generated: blog posts, landing-page and marketing copy, LinkedIn posts, emails, investor and sales communications, documentation, essays, and reports. Triggers include any request to 'write', 'draft', 'edit', 'rewrite', 'clean up', 'humanize', or 'de-slop' text, or any request that the output 'not sound like AI' or 'not sound like ChatGPT'. Apply it as a final revision pass on any substantial piece of prose before delivering. It catalogues the recognized tells of LLM writing (vocabulary fingerprints, sentence-shape patterns, tone and stance habits, transitions, and formatting) and gives the fix for each. Do NOT apply it to code, data tables, or output where the user explicitly asked for a specific structured format."
 ---
 

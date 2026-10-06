@@ -1,5 +1,5 @@
 ---
-name: ai-design-clean
+name: deslop-design
 description: "Use this skill whenever designing, building, reviewing, or editing anything visual that should not look AI-generated: websites, landing pages, HTML/CSS/React artifacts, dashboards, slides, one-pagers, email templates, and UI mockups. Triggers include any request to 'design', 'build a page', 'make a landing page', 'create a UI', 'redesign', 'make it look less AI', 'make it look human', or 'de-slop the design', and any review of existing frontend code or screenshots for quality. It catalogues the recognized visual tells of AI-generated design (left-border callouts, icon-in-a-box grids, eyebrows and double eyebrows, gradient headlines, uniform card grids, purple defaults) and gives graded alternatives, simple to complex, plus a framework for choosing the right fix for the overall context. Apply it as a final review pass on any substantial frontend output before delivering. Do NOT apply it to backend code, data pipelines, or cases where the user explicitly requests one of the catalogued patterns."
 ---
 
@@ -163,7 +163,7 @@ The highest-frequency offenders, for a quick scan:
 
 - Simple: body at near-black (#1a1a1a-ish) on white; reserve gray for genuinely secondary metadata.
 
-**Interchangeable headline voice.** "Build faster. Ship smarter." headline patterns are a writing tell rendered in 72px. Apply the companion `ai-writing-clean` skill to all display copy; the two skills should always run together on marketing pages.
+**Interchangeable headline voice.** "Build faster. Ship smarter." headline patterns are a writing tell rendered in 72px. Apply the companion `deslop-writing` skill to all display copy; the two skills should always run together on marketing pages.
 
 ## 5. Motion tells
 
@@ -204,7 +204,7 @@ Run this as a dedicated review after building:
 9. Check typography: is it all Inter/default at default sizes? Is body text gray-500? Fix contrast and pick a deliberate headline face.
 10. Remove blanket scroll animations; keep at most two intentional motions; check `prefers-reduced-motion`.
 11. Run the cover test: hide the logo and copy. If the page could be any company's, iterate.
-12. Run `ai-writing-clean` on all visible copy, headlines included.
+12. Run `deslop-writing` on all visible copy, headlines included.
 
 ## Calibration
 
@@ -218,4 +218,4 @@ Do not treat surface fixes as the whole job. The deep tell is decoration without
 
 ## Sources and pairing
 
-Patterns drawn from designer and frontend community documentation of v0/Lovable/Bolt/ChatGPT/Claude output conventions, shadcn/Tailwind default fingerprints, and landing-page teardown commentary current as of mid-2026. This skill is the visual companion to `ai-writing-clean`; run both on any public-facing page, since copy tells and design tells almost always co-occur.
+Patterns drawn from designer and frontend community documentation of v0/Lovable/Bolt/ChatGPT/Claude output conventions, shadcn/Tailwind default fingerprints, and landing-page teardown commentary current as of mid-2026. This skill is the visual companion to `deslop-writing`; run both on any public-facing page, since copy tells and design tells almost always co-occur.
