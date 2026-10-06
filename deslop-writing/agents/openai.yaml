@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deslop Writing"
+  short_description: "Remove recognizable AI writing patterns"
+  default_prompt: "Use $deslop-writing to revise this copy so it reads as direct, specific human writing."

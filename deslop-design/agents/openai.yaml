@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deslop Design"
+  short_description: "Remove generic AI interface patterns"
+  default_prompt: "Use $deslop-design to review and rework this interface so it feels specific, intentional, and human-designed."
