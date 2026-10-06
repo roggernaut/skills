@@ -12,6 +12,8 @@ Almost every tell below comes from one of two underlying habits. Fixing the surf
 
 **One: manufacturing significance the content has not earned.** The model has learned that signaling importance reads as useful, so it tells the reader something matters instead of showing why, inflates ordinary stakes to world-historical ones, and attaches grand meaning to mundane facts. The fix is almost always to state the concrete thing and delete the significance claim. If the thing matters, the specifics will carry it. If it does not, no amount of framing will save it.
 
+Wikipedia's editors describe the mechanism as regression to the mean: specific, unusual facts are statistically rare, so the model swaps them for generic positive descriptions that fit any subject. "Inventor of the first train-coupling device" becomes "a revolutionary titan of industry." The text gets louder and blurrier at the same time. Whenever a sentence could be pasted into an article about a different subject unchanged, put the specific fact back.
+
 **Two: reaching for a fancier construction than plain statement.** The model's repetition penalty and its training on formal, edited corpora push it away from simple verbs and direct sentences toward ornate vocabulary, contrast framing, and rhetorical scaffolding that sound sophisticated without being sophisticated. The fix is to prefer the plain verb, the direct claim, and the shorter path.
 
 A useful test from a Reddit editor, paraphrased: AI emphasizes everything because it cannot tell what is important. Wherever you see ordinary things that do not need emphasis getting emphasized, that is the tell.
@@ -30,6 +32,9 @@ The highest-frequency offenders, for a quick scan:
 8. Bold-lead-in bullet lists ("**Thing:** description").
 9. Stakes inflation and puffery: "this will fundamentally reshape everything."
 10. Hollow opener or closer that restates without adding.
+11. Vague connection: "associated with," "in connection with" where a plain relationship ("was CEO of") belongs.
+12. Canned credibility: "featured in leading outlets," "maintains an active social media presence."
+13. Hedging about sources: "while specific details are limited," "based on available information."
 
 ## 1. Vocabulary fingerprints
 
@@ -53,11 +58,20 @@ Certain words appear in LLM output at many times their natural rate. None is for
 | meticulous, vibrant, bustling, rich (heritage/history) | a concrete detail instead |
 | game-changer, revolutionary, cutting-edge, state-of-the-art | what it actually does |
 | resonate, elevate, embark, journey | plain verb or noun |
+| showcase, enhance, bolster, garner, align with | show, improve, support, get, match |
+| interplay, enduring, valuable, deep dive | the specific relationship, how long, what it is worth, or cut |
+| nestled, in the heart of, natural beauty, renowned, diverse array, commitment to | where it is, what it looks like, who knows it, what it offers, what it does |
 
-**The "serves as" dodge.** The model avoids the plain copula and reaches for "serves as," "stands as," "represents," or "marks." Use *is* or *are*.
+**The vocabulary drifts.** The overused set changes with each model generation. Per Wikipedia's tracking, "delve" peaked in 2023 to early 2024 and dropped off sharply in 2025. GPT-4-era text leans on delve, tapestry, testament, intricate, pivotal, and boasts. GPT-4o-era text leans on align with, fostering, showcasing, and enhance. Mid-2025-onward text leans on emphasizing, enhance, highlighting, and showcasing, plus the canned credibility phrases in section 4. Grok overuses faux-scientific words (causal, empirical, correlate). Do not assume a draft is clean because "delve" is absent. Also take the list literally: a word being overused does not make its synonyms suspect.
+
+**The "serves as" dodge.** The model avoids the plain copula and reaches for "serves as," "stands as," "functions as," "represents," "marks," or "refers to." It also prefers marketing verbs ("boasts," "features," "offers," "maintains") to plain "has." Newer models dress it up further: "ventured into politics as a candidate" for "was a candidate," "began her career as" for "was." Use *is*, *are*, and *has*. One study found *is* and *are* dropped by over 10% in academic writing in 2023, and AI copyedits strip them out of human text on purpose.
 
 - Avoid: "The dashboard serves as a central hub for all your data."
 - Prefer: "The dashboard shows all your data in one place."
+- Avoid: "The gallery features four separate spaces."
+- Prefer: "The gallery has four rooms."
+
+**Fancy synonyms for plain verbs.** Wikipedia's editors list what humans write more often than AI: *wrote* (not authored), *moved* (not relocated), *used* (not utilized), *tried* (not attempted), *died* (not passed away). Prefer the short word.
 
 **Magic adverbs.** "Quietly," "deeply," "fundamentally," "remarkably," "arguably" get sprinkled in to lend weight. Delete them and see if the sentence loses anything. Usually it does not.
 
@@ -70,6 +84,8 @@ These survive paraphrase, so they matter more than vocabulary. The model returns
 - Avoid: "This isn't a feature. It's a philosophy."
 - Avoid: "We're not building software, we're building a movement."
 - Prefer: "The software enforces one rule: every change is logged." (Say what it is. Drop the contrast.)
+
+**The reversed form, "Y rather than X."** Newer models have shifted toward this variant, which tucks the contrast at the end of the sentence: "prioritizing consolidation of power rather than ideological purity." It is the same move. Check every "rather than" and "instead of" and ask whether the negated half adds anything.
 
 **"Not X. Not Y. Just Z."** The dramatic countdown that negates two things before revealing the point.
 
@@ -86,6 +102,8 @@ These survive paraphrase, so they matter more than vocabulary. The model returns
 - Avoid: "The team shipped the API in March, marking a pivotal moment in the company's evolution."
 - Prefer: "The team shipped the API in March." If the consequence matters, write a real sentence about the consequence.
 
+The usual openers are highlighting, underscoring, emphasizing, ensuring, reflecting, symbolizing, contributing to, fostering, encompassing, enhancing, and setting the stage for. Search-enabled models now pin these to a named source ("Roger Ebert highlighted its lasting influence") whether or not the source says anything of the kind. Treat an attributed significance claim as unverified until you have read the source.
+
 **False ranges.** "From X to Y" where X and Y are not endpoints of any real scale and nothing meaningful sits between them.
 
 - Avoid: "From innovation to transformation, we cover it all."
@@ -93,7 +111,7 @@ These survive paraphrase, so they matter more than vocabulary. The model returns
 
 **Anaphora abuse.** Repeating the same sentence opening three or more times in quick succession ("They assume... They assume... They assume..."). One repetition can land. A stack of them is a tell.
 
-**Tricolon / rule of three.** Grouping ideas in threes: three adjectives, three short phrases, three parallel clauses. A single tricolon is fine. Two or three in the same piece is a pattern-recognition failure. Vary the count. Use two items, or four, or a number.
+**Tricolon / rule of three.** Grouping ideas in threes: three adjectives, three short phrases, three parallel clauses. A single tricolon is fine. Two or three in the same piece is a pattern-recognition failure. Vary the count. Use two items, or four, or a number. Triplets are a stronger signal in places nobody bothers with flourishes, like commit messages, changelogs, and Slack replies.
 
 - Avoid: "fast, reliable, and secure"
 - Avoid: "Products solve problems; platforms create worlds. Products scale linearly; platforms scale exponentially. Products..."
@@ -106,6 +124,10 @@ These survive paraphrase, so they matter more than vocabulary. The model returns
 **Listicle in a trench coat.** A list disguised as prose by opening each paragraph with "The first... The second... The third..." Often what the model does after being told to stop using bullet lists. If the content is genuinely a list, decide whether a real list or real connected prose serves better, and commit to one.
 
 **Formulaic paragraph shape.** Every paragraph built identically: topic sentence, one supporting point, summary sentence. Real writing varies paragraph length and structure. Let some paragraphs be one sentence of argument and others a developed case.
+
+**Elegant variation.** A repetition penalty pushes the model to rename the same thing in every sentence: "the artists," then "these creatives," then "like-minded visionaries," then "their artistic community." Readers lose track of whether these are the same people. Pick one name for each thing and repeat it.
+
+**The "challenges" ending.** A closing section or paragraph that opens "Despite its [praise], X faces several challenges," lists them, then resolves with "Despite these challenges, X continues to thrive" or a hopeful note about future initiatives. Often paired with a "Future outlook" heading. If there are real problems, state them with specifics where they are relevant, and do not wrap them in reassurance.
 
 ## 4. Tone and stance tells
 
@@ -134,6 +156,12 @@ These survive paraphrase, so they matter more than vocabulary. The model returns
 
 **Vague attributions.** "Experts argue," "industry reports suggest," "observers have noted," "several publications have cited." Unnamed authorities, often with inflated counts (one person's view presented as consensus, "several" meaning two). Name the source or drop the claim.
 
+**Vague connection or association.** Instead of stating the relationship ("In 2017 she was CEO of ExampleCorp," "He taught violin in Knokke-Heist"), the model writes that the subject "is associated with" or was "in connection with" the other thing, sometimes stacked several times in one paragraph ("particularly associated with," "became associated with"). Wikipedia lists this among the most common signs of newly generated text as of late 2026. It usually means the model does not know the actual relationship. Find out what it is and state it, or cut the sentence.
+
+**Canned credibility and media coverage.** The model tries to prove something matters by listing where it has been mentioned and what kind of outlet each is: "featured in Wired, Vogue, and other prominent media outlets," "profiled in multiple independent, widely-read publications," "regional press coverage," "trade publications." For people and companies it adds "maintains an active social media presence." This is more common in 2025-and-later models and is now one of the most frequent tells. Say what the coverage said, or drop it. A customer quote with a number beats a list of logos.
+
+**Hedging about sources and usage.** Search-enabled models that cannot find something say so in the text: "While specific details are limited," "not widely documented," "based on available information," "in the provided sources." They then guess at what the information "likely" is. A newer variant warns the reader how to treat a fact: "should be treated as indicative rather than definitive," "does not by itself establish." If you do not know something, find it or leave it out. Do not narrate the gap, and do not tell the reader how to weigh a claim; make the claim at the strength the evidence supports.
+
 **Invented concept labels.** Coining authoritative-sounding compounds and using them as if established: "the supervision paradox," "the acceleration trap," "workload creep." They name a thing to skip arguing for it. Several in one piece is a strong slop signal. Make the argument; do not brand it.
 
 ## 5. Transitions and connectors
@@ -144,9 +172,11 @@ Avoid as filler: Moreover, Furthermore, Additionally, In addition, It's worth no
 
 The fix is usually deletion. Well-ordered sentences connect through their content and rarely need a signpost. Where a real logical turn exists, a plain "but," "so," "still," or "because" carries it. Vary connectors and use them only when the logic genuinely shifts.
 
+Calibration: Wikipedia now rates transitions on their own as a weak signal, because essay-style human writing uses them too and newer models use them less. "Additionally" at the start of a sentence is still a strong one. Cut connectors because they are padding. Their absence does not make a draft clean.
+
 ## 6. Formatting tells
 
-**Em dashes.** Compulsive use for dramatic pauses, asides, and pivots is among the most discussed tells. The em dash is legitimate in human writing, so its presence alone proves nothing, but LLM output overuses it badly. Default: do not use em dashes. Use a period, a comma, parentheses, or a colon, whichever the sentence actually wants.
+**Em dashes.** Compulsive use for dramatic pauses, asides, and pivots is among the most discussed tells. The em dash is legitimate in human writing, so its presence alone proves nothing, but LLM output overuses it badly. Default: do not use em dashes. Use a period, a comma, parentheses, or a colon, whichever the sentence actually wants. AI em dashes are often spaced ( — ), against most style guides. The tell now varies by model: OpenAI suppressed em dashes from GPT-5.1 on, and a July 2026 study found that among current models only Claude used them more than professional writers. Writing with Claude makes this check matter more.
 
 **Bold-lead-in lists.** The signature LLM list item: a bolded phrase, a colon, then a description. "**Scalability:** the system grows with you." Almost nobody writes this by hand. Use plain lists, or fold the points into prose, and do not open every item with a bolded label.
 
@@ -156,7 +186,11 @@ The fix is usually deletion. Well-ordered sentences connect through their conten
 
 **Emoji as section markers and decorative bullets.** A common chatbot habit (the 🚀, the ✅, the 🤔 before "Let's delve deeper"). Avoid unless the medium and audience clearly call for it.
 
-**Title-case headings and rigidly uniform structure.** Headings styled Like This Throughout, sections of near-identical length, a list dropped into the middle of otherwise flowing prose. Let structure follow content.
+**Title-case headings and rigidly uniform structure.** Headings styled Like This Throughout, sections of near-identical length, a list dropped into the middle of otherwise flowing prose. Let structure follow content. Related: "X and Y" headings ("Awards and Recognition," "Challenges and Future Directions"), headings that contain only subheadings and no text, and a title heading repeated at the top of a page that already has one.
+
+**Tiny tables.** A two- or three-row table for facts that read fine as a sentence. Use a table only when readers compare across rows.
+
+**Chatbot residue.** Text meant for the person prompting, pasted into the deliverable: "Here is a draft," "I hope this helps," "Certainly!", "Would you like me to...", "Let me know if," "Delete this section before submission," and unfilled placeholders like "[Your Name]" or "[link to source]." Search for brackets and second-person instructions before shipping.
 
 **Other surface tells when writing for a non-US audience.** LLMs default to American spelling and the Oxford comma. If the house style is British or Dutch-English, switch "-ize" to "-ise," restore the "u" in "colour" and "behaviour," and match the local serial-comma convention. (This is a giveaway only when it clashes with the intended register; it is not wrong in itself.)
 
@@ -190,12 +224,18 @@ Run this as a dedicated edit after drafting:
 7. Find standalone fragments and short one-line paragraphs used for drama. Rejoin them into full sentences.
 8. Find every claim of importance ("crucial," "pivotal," "fundamentally," "reshape," "powerful"). For each, either replace it with the concrete specific that proves it, or delete it.
 9. Find hedges ("may," "might," "tends to," "arguably," "generally"). Take a position or keep one real caveat.
-10. Reread the opener and closer. Cut throat-clearing and any conclusion that only restates.
-11. Read the whole thing aloud. Where the rhythm is monotonously even, vary sentence length on purpose.
+10. Search for "associated with," "in connection with," "featured in," "coverage," "available information," and "documented." Replace each with the actual relationship or fact, or cut it.
+11. Search for "serves as," "stands as," "features," "boasts," and "offers." Try *is* or *has* first.
+12. Check that each person, product, or group keeps one name throughout.
+13. Search for "[", "Here is," "I hope," and "let me know" to catch chatbot residue and unfilled placeholders.
+14. Reread the opener and closer. Cut throat-clearing, any conclusion that only restates, and any "despite these challenges" resolution.
+15. Read the whole thing aloud. Where the rhythm is monotonously even, vary sentence length on purpose.
 
 ## Calibration
 
 These are defaults, not absolute laws of writing. Skilled human writers use em dashes, tricolons, and the occasional sharp fragment to good effect. The reason to avoid them here is that LLMs overuse them so heavily that they now read as machine output regardless of how well they are deployed, and a clean default is the safer position.
+
+Wikipedia also lists features more common in human writing than in AI text: simple "there is" and "it has" phrasing, plain verbs, flat superlatives ("was the first," "is the only"), ordinary intensifiers ("very"), and the occasional wordy phrase ("in order to," "the fact that"). Clean writing does not need to be stripped of all of these. A definite "was the first" backed by a source reads as more human than a careful "played a pivotal role."
 
 Two cautions:
 
@@ -205,4 +245,4 @@ Do not treat the surface fixes as the whole job. The deeper tells (manufactured 
 
 ## Sources
 
-Drawn from Wikipedia's *Signs of AI writing* (WikiProject AI Cleanup), Grammarly's research on common AI words, the tropes.fyi catalogue, Pangram Labs' detection guide, NPR's reporting on the Wikipedia guide, and several editor field guides current as of mid-2026. The specific tells are empirically attested across these sources; the framing and defaults are tuned for clean, direct B2B and technical writing.
+Drawn from Wikipedia's *Signs of AI writing* (WikiProject AI Cleanup, checked October 2026), Grammarly's research on common AI words, the tropes.fyi catalogue, Pangram Labs' detection guide, NPR's reporting on the Wikipedia guide, and several editor field guides current as of mid-2026. The specific tells are empirically attested across these sources; the framing and defaults are tuned for clean, direct B2B and technical writing.
